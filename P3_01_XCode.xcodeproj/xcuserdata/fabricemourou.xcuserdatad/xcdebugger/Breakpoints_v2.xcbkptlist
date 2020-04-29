@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B935AC9A-88F9-4AED-8042-E772E4463997"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "263D46AD-50A6-417D-A54C-9703275D889E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "P3_01_XCode/Player/Player.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "askToDefineName()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3F38E47-F421-4DA1-BD37-38C7378FB55A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "P3_01_XCode/Warrior/Subclasses/Eijiro.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "Eijiro"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "C3F38E47-F421-4DA1-BD37-38C7378FB55A - 2d84101f53ab8c53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "P3_01_XCode.Eijiro.deinit"
+                  moduleName = "P3_01_XCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabricemourou/Documents/FormationOpenclassroom/P3_mourou_fabrice/P3_01_XCode/P3_01_XCode/Warrior/Subclasses/Eijiro.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "C3F38E47-F421-4DA1-BD37-38C7378FB55A - c4299efadfc2e246"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "P3_01_XCode.Eijiro.__deallocating_deinit"
+                  moduleName = "P3_01_XCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabricemourou/Documents/FormationOpenclassroom/P3_mourou_fabrice/P3_01_XCode/P3_01_XCode/Warrior/Subclasses/Eijiro.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "C3F38E47-F421-4DA1-BD37-38C7378FB55A - 97c3f630f7e90560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "P3_01_XCode.Eijiro.__allocating_init(name: Swift.String, maxLifePoints: Swift.Int, weapon: P3_01_XCode.Weapon, baseAttackPoints: Swift.Int) -&gt; P3_01_XCode.Eijiro"
+                  moduleName = "P3_01_XCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabricemourou/Documents/FormationOpenclassroom/P3_mourou_fabrice/P3_01_XCode/P3_01_XCode/Warrior/Subclasses/Eijiro.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  uuid = "C3F38E47-F421-4DA1-BD37-38C7378FB55A - 8a1f33651dc40e9a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "P3_01_XCode.Eijiro.init(name: Swift.String, maxLifePoints: Swift.Int, weapon: P3_01_XCode.Weapon, baseAttackPoints: Swift.Int) -&gt; P3_01_XCode.Eijiro"
+                  moduleName = "P3_01_XCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabricemourou/Documents/FormationOpenclassroom/P3_mourou_fabrice/P3_01_XCode/P3_01_XCode/Warrior/Subclasses/Eijiro.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "230">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
