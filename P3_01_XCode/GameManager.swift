@@ -98,6 +98,7 @@ class GameManager {
         while !isGameOver {
             for player in players {
                 // opponent should be handled differently if there multiple player (more than 2)
+                // Test
                 let opponent = getOpponentFrom(player: player)
                 player.playTurn(opponentPlayer: opponent)
                 
