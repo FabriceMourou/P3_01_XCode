@@ -27,7 +27,7 @@ class Warrior {
     
     /// Function used
     func attack(warrior: Warrior) {
-        print("\(name) attack \(warrior.name)")
+        print(" 🎌 \(name) attack ⚔️ \(warrior.name) with \(weapon.name) 🗡")
         warrior.takeDamage(amount: attackPoints)
     }
     
@@ -38,13 +38,20 @@ class Warrior {
     
     
     func describe() {
-        print("name: \(name), \(currentLifePoints)/\(maxLifePoints)")
+        print(" 🌿  ٩(๏_๏)۶ warrior \(name) -> \(currentLifePoints)/\(maxLifePoints) ٩(๏_๏)۶")
+        
     }
     
     func describeHealthPoint() {
-        print("\(name) has now \(currentLifePoints) HP")
+        if !isAlive {
+            print("☠️ \(name) is dead ☠️ !")
+            
+        } else {
+            
+            print("🩸\(name) has now \(currentLifePoints) HP 🩸 ")
+            
+        }
     }
-    
     
     // MARK: - Private
     

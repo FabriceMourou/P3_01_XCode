@@ -9,15 +9,16 @@ class Player {
     
     // MARK: - Internal
     
-    init(id: Int) {
+    init(id: Int, name: String) {
         self.id = id
+        self.name = name
     }
     
     // MARK: Methods - Internal
     
     let id: Int
     var warriors: [Warrior] = []
-    var name: String?
+    var name: String
     
     
     
@@ -30,83 +31,63 @@ class Player {
             if warrior.isAlive {
                 return true
             }
+            
         }
         
         return false
+        
     }
+
+   
+    
+   
+    
+    
     
     func createWarriors(allPlayers: [Player]) {
-        guard let name = name else { return }
-        
-        print("\(name) Make up your team")
-        print("Create 3 warriors")
-        //        print("Each of your warriors should have a name and a family")
-        
-        for _ in 1...3 {
-            createWarrior()
+        print("🎌 \(name) Make up your team 🎌")
+        print(" 🌿 Create 3 warriors 🌿")
+       
+        for warriorId in 1...3 {
+            let allWarriorNames = getAllWarriorNamesFrom(players: allPlayers)
+            
+            createWarrior(id: warriorId, alreadyUsedWarriorNames: allWarriorNames)
         }
     }
     
-    func askToDefineName() {
-        
-        var name: String?
-        
-        repeat {
-            print("player \(id) please input your name:")
-            
-            if let nameInput = readLine() {
-                name = nameInput
-            } else {
-                print("An error occured while trying to get your name")
-                print()
+    
+    
+    private func getAllWarriorNamesFrom(players: [Player]) -> [String] {
+        var allNames: [String] = []
+        for player in players {
+            for warrior in player.warriors {
+                allNames.append(warrior.name)
             }
-        } while name == nil
-        
-        self.name = name
+        }
+        return allNames
     }
     
-    func askWarriorName() -> String {
+    
+    private func createWarrior(id: Int, alreadyUsedWarriorNames: [String]) {
         
+        print(" 🎌 Enter your warrior's name \(id) 🎯")
+        let warriorName = nameDefiner.startAskNameLoop(id: id, alreadyUsedNames: alreadyUsedWarriorNames)
         
-        var warriorName: String?
-        
-        repeat {
-            print("Enter your warrior's name \(warriors.count + 1)")
-            if let warriorNameInput = readLine() {
-                warriorName = warriorNameInput
-            }
-        } while warriorName == nil
-        
-        
-        return warriorName!
-        
-        
-        
-    }
-    func createWarrior() {
-        
-        //chooseFamily()
-        let warriorName = askWarriorName()
-        
-        let weapon = Weapon(name: "sword", attackPoints: 30)
+        let weapon = Naginata()
         let warrior = Warrior(name: warriorName , maxLifePoints: 100, weapon: weapon, baseAttackPoints: 10)
         
         warriors.append(warrior)
         
-        
-        
-        
-        
     }
     
     func playTurn(opponentPlayer: Player) {
-        describeWarriorsTest()
+        describeWarriors()
         let selectedWarrior = selectWarrior(from: self)
         
         
         //TODO: decide to attack  or heal
         
-        opponentPlayer.describeWarriorsTest()
+        opponentPlayer.describeWarriors()
         let targetWarrior = selectWarrior(from: opponentPlayer)
         
         
@@ -116,42 +97,48 @@ class Player {
         targetWarrior.describeHealthPoint()
         
         
+        
         // if attackk => select second warrior from opoonentplayer
         // if jheal => select second warrior from self team
         // performaction (heal or attack)
     }
     
-    func describeWarriorsTest() {
+    func describeWarriors() {
         for warrior in warriors {
             warrior.describe()
+            
         }
     }
     
     func selectWarrior(from player: Player) -> Warrior {
+        
+       
         //TODO: Get user choice from readline
         let playerChoice = Int(readLine()!)!
         
         let selectedWarrior = player.warriors[playerChoice]
-        print("You have selected \(selectedWarrior.name)")
+        print("You have selected \(selectedWarrior.name) 🌿")
+       
+        
+        
         return selectedWarrior
     }
     
-    func describeWarriors(){
-        print(" ٩(๏_๏)۶ \(name!) see your warriors ! ٩(๏_๏)۶")
-        _ = createWarriors
-        for _ in warriors{
-            print("\(warriors.count) ready to fight ლ(｀ー´ლ) !!")
-        }
-        
-        
-        
-    }
+    //    func describeWarriors(){
+    //        for _ in warriors{
+    //        print(" ٩(๏_๏)۶ \(name!) see your warriors ! ٩(๏_๏)۶")
+    //        }
+    //        _ = createWarriors
+    //        for _ in warriors{
+    //            print("\(warriors.count) ready to fight ლ(｀ー´ლ) !!")
+    //        }
+    //        }
     
     
     // MARK: - Private
     
     // MARK: Properties - Private
-    
+    private let nameDefiner = NameDefiner()
     
     
     // MARK: Methods - Private

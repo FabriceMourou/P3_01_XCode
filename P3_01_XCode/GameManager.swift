@@ -31,7 +31,11 @@ class GameManager {
     
     // MARK: - Private
     
+    
+    
     // MARK: Properties - Private
+    
+    private let nameDefiner = NameDefiner()
     
     private var players: [Player]
     private var turnNumbers: Int
@@ -40,30 +44,40 @@ class GameManager {
     private var playerNames: [String] {
         var names: [String] = []
         for player in players {
-            if let playerName = player.name {
-                names.append(playerName)
-            }
+            names.append(player.name)
         }
         return names
     }
     
     
-    
-    
     // MARK: Methods - Private
+    
+    
     
     private func printWelcomeInstructions() {
         print("🟠       Welcome in this wonderful game         🟠")
         print("🟠   (ง’̀-‘́)ง 🔴-🔶-🔴-🔶-🔴-🔶-🔴-🔶 (ง’̀-‘́)ง   🟠")
     }
     
+    
+    
+    
+    
+ 
+    
+    
     private func createPlayers() {
         for playerId in 1...numberOfPlayer {
-            let player = Player(id: playerId)
-            player.askToDefineName()
+            print(" 🔆 player \(playerId) please input your name: 🔆")
+            let playerName = nameDefiner.startAskNameLoop(id: playerId, alreadyUsedNames: playerNames)
+            let player = Player(id: playerId, name: playerName)
+            
             players.append(player)
         }
     }
+    
+    
+    
     
     private func startTeamCreationPhase() {
         for player in players {
@@ -73,15 +87,18 @@ class GameManager {
     
     
     private func printStartFightPhaseBeginInstructions() {
-        print("ლ(•́•́ლ) ", separator: "", terminator: "")
+        print()
+        print("⚔️ ლ(•́•́ლ) ", separator: "", terminator: "")
         for name in playerNames {
             print(name, separator: "", terminator: " ")
         }
-        print("Choose your warriors !! ლ(•́•́ლ)")
+        print("Choose your warriors !! ლ(•́•́ლ) ⚔️")
+       
+        print("⚔️ ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ ⚔️")
+        print()
     }
     
     private var isGameOver: Bool {
-        //TODO: adjust value to reflect when the game is over (only one player alive)
         for player in players {
             if player.isInGame {
                 return false
@@ -107,24 +124,6 @@ class GameManager {
                 }
             }
         }
-        
-        
-        
-//        if let userChoice = readLine() {
-//            switch userChoice {
-//            case "1":
-//                print(playerNames[0], " ʕ •`ᴥ•´ʔ choose your warrior ")
-//            //         startFightPhase(against: getOpponentFrom)
-//            case "2":
-//                print(playerNames[1], " ʕʘ̅͜ʘ̅ʔ choose your warrior ")
-//            //         playturn(against: getOpponentFrom)
-//            default:
-//                print("I do not understand")
-//
-//            }
-//        }
-        
-        
     }
     
     private func handleEndGame(){
@@ -141,28 +140,25 @@ class GameManager {
         
         
         //TODO: Adjust get opponent (id is different)
-//
-//        let opponentChoice = readLine()
-//        if opponentChoice == nil {
-//            print("I did not understand your choice")}
-//        else {
-//            print(" ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ ")
-//            for name in playerNames {
-//                print("\(name) FIGHT !!")
-//            }
-//
-//        }
+        //
+        //        let opponentChoice = readLine()
+        //        if opponentChoice == nil {
+        //            print("I did not understand your choice")}
+        //        else {
+        //            print(" ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ ")
+        //            for name in playerNames {
+        //                print("\(name) FIGHT !!")
+        //            }
+        //
+        //        }
         return players[1]
     }
     
     
-    func chooseWarriors (){
+    private func chooseWarriors () {
         for warrior in players {
             warrior.describeWarriors ()
         }
-        
-        
-        
     }
     
     

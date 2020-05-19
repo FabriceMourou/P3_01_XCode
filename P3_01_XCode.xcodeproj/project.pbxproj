@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E2293205245196DF004EE9CF /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2293204245196DF004EE9CF /* Family.swift */; };
+		E22F1A47246FEC1A00675E81 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A46246FEC1A00675E81 /* InputError.swift */; };
+		E22F1A49246FF10200675E81 /* NameDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A48246FF10200675E81 /* NameDefiner.swift */; };
 		E23C8591244AEE3A009E4162 /* Naginata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8590244AEE3A009E4162 /* Naginata.swift */; };
 		E23C8593244AEEFE009E4162 /* Tanto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8592244AEEFE009E4162 /* Tanto.swift */; };
 		E23C8595244AEF69009E4162 /* Uchigatana.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8594244AEF69009E4162 /* Uchigatana.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		E2293204245196DF004EE9CF /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		E22F1A46246FEC1A00675E81 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
+		E22F1A48246FF10200675E81 /* NameDefiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDefiner.swift; sourceTree = "<group>"; };
 		E23C8590244AEE3A009E4162 /* Naginata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Naginata.swift; sourceTree = "<group>"; };
 		E23C8592244AEEFE009E4162 /* Tanto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tanto.swift; sourceTree = "<group>"; };
 		E23C8594244AEF69009E4162 /* Uchigatana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uchigatana.swift; sourceTree = "<group>"; };
@@ -146,12 +150,14 @@
 			isa = PBXGroup;
 			children = (
 				E23C85C7244B083E009E4162 /* main.swift */,
+				E22F1A48246FF10200675E81 /* NameDefiner.swift */,
 				E25579D12445AFC4005E3D9A /* GameManager.swift */,
 				E2293204245196DF004EE9CF /* Family.swift */,
 				E23C85AE244AF625009E4162 /* Player */,
 				E23C859D244AF263009E4162 /* Warrior */,
 				E23C859C244AF077009E4162 /* Weapon */,
 				E25579DE2445BBA9005E3D9A /* Chest.swift */,
+				E22F1A46246FEC1A00675E81 /* InputError.swift */,
 			);
 			path = P3_01_XCode;
 			sourceTree = "<group>";
@@ -226,7 +232,9 @@
 				E23C8599244AEFD8009E4162 /* Tachi.swift in Sources */,
 				E23C85A1244AF338009E4162 /* Eijiro.swift in Sources */,
 				E23C85A5244AF3B9009E4162 /* Kabuto.swift in Sources */,
+				E22F1A49246FF10200675E81 /* NameDefiner.swift in Sources */,
 				E2293205245196DF004EE9CF /* Family.swift in Sources */,
+				E22F1A47246FEC1A00675E81 /* InputError.swift in Sources */,
 				E23C8593244AEEFE009E4162 /* Tanto.swift in Sources */,
 				E23C859F244AF2A3009E4162 /* Asako.swift in Sources */,
 				E23C85C8244B083E009E4162 /* main.swift in Sources */,
