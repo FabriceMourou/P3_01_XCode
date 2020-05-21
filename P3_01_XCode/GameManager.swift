@@ -117,8 +117,9 @@ class GameManager {
                 // opponent should be handled differently if there multiple player (more than 2)
                 // Test
                 let opponent = getOpponentFrom(player: player)
-                player.playTurn(opponentPlayer: opponent)
-                
+               let teammate = getOpponentFrom(player: player)
+//                player.playTurn(opponentPlayer: opponent)
+                player.playTurn(opponentPlayer: opponent, teammatePlayer: teammate)
                 if isGameOver {
                     break
                 }
@@ -137,20 +138,6 @@ class GameManager {
             }
         }
         
-        
-        
-        //TODO: Adjust get opponent (id is different)
-        //
-        //        let opponentChoice = readLine()
-        //        if opponentChoice == nil {
-        //            print("I did not understand your choice")}
-        //        else {
-        //            print(" ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ ")
-        //            for name in playerNames {
-        //                print("\(name) FIGHT !!")
-        //            }
-        //
-        //        }
         return players[1]
     }
     

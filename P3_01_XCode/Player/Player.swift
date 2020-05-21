@@ -37,17 +37,12 @@ class Player {
         return false
         
     }
-
-   
-    
-   
-    
     
     
     func createWarriors(allPlayers: [Player]) {
         print("🎌 \(name) Make up your team 🎌")
         print(" 🌿 Create 3 warriors 🌿")
-       
+        
         for warriorId in 1...3 {
             let allWarriorNames = getAllWarriorNamesFrom(players: allPlayers)
             
@@ -80,26 +75,34 @@ class Player {
         
     }
     
-    func playTurn(opponentPlayer: Player) {
+    func playTurn(opponentPlayer: Player, teammatePlayer: Player) {
         describeWarriors()
         let selectedWarrior = selectWarrior(from: self)
         
-        
         //TODO: decide to attack  or heal
-        
+        if let playerChoice = readLine() {
+            
+            if playerChoice == "1"{
         opponentPlayer.describeWarriors()
         let targetWarrior = selectWarrior(from: opponentPlayer)
-        
-        
-        
         selectedWarrior.attack(warrior: targetWarrior)
+                targetWarrior.describeHealthPoint(warrior: selectedWarrior)
+            }
+            else if playerChoice == "2"{
+        teammatePlayer.describeWarriors()
+        let targetTeammate = selectWarrior(from: teammatePlayer )
+        selectedWarrior.heal(warrior: targetTeammate)
+                targetTeammate.describeHealthPoint(warrior: selectedWarrior)
+            }
+            else {
+                
+            }
         
-        targetWarrior.describeHealthPoint()
-        
+        }
         
         
         // if attackk => select second warrior from opoonentplayer
-        // if jheal => select second warrior from self team
+        // if heal => select second warrior from self team
         // performaction (heal or attack)
     }
     
@@ -112,29 +115,24 @@ class Player {
     
     func selectWarrior(from player: Player) -> Warrior {
         
-       
+        
         //TODO: Get user choice from readline
         let playerChoice = Int(readLine()!)!
         
         let selectedWarrior = player.warriors[playerChoice]
+        
         print("You have selected \(selectedWarrior.name) 🌿")
-       
+        print ("1: ⚔️ Choose Attack ⚔️")
+        print ("2: 💊 Choose Heal 💊")
         
         
         return selectedWarrior
     }
+    func removeWarrior (){
+            
     
-    //    func describeWarriors(){
-    //        for _ in warriors{
-    //        print(" ٩(๏_๏)۶ \(name!) see your warriors ! ٩(๏_๏)۶")
-    //        }
-    //        _ = createWarriors
-    //        for _ in warriors{
-    //            print("\(warriors.count) ready to fight ლ(｀ー´ლ) !!")
-    //        }
-    //        }
-    
-    
+               }
+   
     // MARK: - Private
     
     // MARK: Properties - Private
