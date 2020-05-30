@@ -23,8 +23,6 @@ class GameManager {
         startTeamCreationPhase()
         startFightPhase()
         handleEndGame()
-        chooseWarriors()
-        
     }
     
     
@@ -35,7 +33,7 @@ class GameManager {
     
     // MARK: Properties - Private
     
-    private let nameDefiner = NameDefiner()
+    private let nameDefiner = InputManager()
     
     private var players: [Player]
     private var turnNumbers: Int
@@ -90,12 +88,13 @@ class GameManager {
         print()
         print("⚔️ ლ(•́•́ლ) ", separator: "", terminator: "")
         for name in playerNames {
-            print(name, separator: "", terminator: " ")
+            print(name, separator: "", terminator: " ! ")
         }
         print("Choose your warriors !! ლ(•́•́ლ) ⚔️")
        
         print("⚔️ ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ ⚔️")
         print()
+        
     }
     
     private var isGameOver: Bool {
@@ -117,9 +116,8 @@ class GameManager {
                 // opponent should be handled differently if there multiple player (more than 2)
                 // Test
                 let opponent = getOpponentFrom(player: player)
-               let teammate = getOpponentFrom(player: player)
-//                player.playTurn(opponentPlayer: opponent)
-                player.playTurn(opponentPlayer: opponent, teammatePlayer: teammate)
+                //                player.playTurn(opponentPlayer: opponent)
+                player.playTurn(opponentPlayer: opponent)
                 if isGameOver {
                     break
                 }
@@ -128,7 +126,7 @@ class GameManager {
     }
     
     private func handleEndGame(){
-        
+        describeAllPlayerWarriors()
     }
     
     private func getOpponentFrom(player: Player) -> Player {
@@ -142,13 +140,10 @@ class GameManager {
     }
     
     
-    private func chooseWarriors () {
-        for warrior in players {
-            warrior.describeWarriors ()
+    private func describeAllPlayerWarriors() {
+        for player in players {
+            player.describeWarriors()
         }
     }
-    
-    
-    
     
 }

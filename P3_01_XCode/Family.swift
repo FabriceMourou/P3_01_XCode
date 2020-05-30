@@ -27,12 +27,13 @@ class Family{
         Family(name: "❁Kogyo❁", life: 150, dammage:20, id: 3),
         Family(name: "※Shonin※", life: 80, dammage:30, id: 4)]
     
-    
     func printFamilies (){
-        print(" Vous avez choisi la famille n°\(id) !",
-            "La famille\(name) qui possède \(life) points de vie et \(dammage) points d'attaque")
-        
-    }
+           
+           print(" Vous avez choisi la famille n°\(id) !",
+               "La famille\(name) qui possède \(life) points de vie et \(dammage) points d'attaque")
+           
+       }
+    
 }
 
 // Bushi: guerrier classe dominante +++

@@ -8,6 +8,10 @@
 
 class Warrior {
     
+    enum Action: CaseIterable {
+        case attack, heal
+    }
+    
     // MARK: - Internal
     
     init(name: String, maxLifePoints: Int, weapon: Weapon, baseAttackPoints: Int) {

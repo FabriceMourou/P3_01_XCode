@@ -9,19 +9,7 @@
 /* Begin PBXBuildFile section */
 		E2293205245196DF004EE9CF /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2293204245196DF004EE9CF /* Family.swift */; };
 		E22F1A47246FEC1A00675E81 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A46246FEC1A00675E81 /* InputError.swift */; };
-		E22F1A49246FF10200675E81 /* NameDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A48246FF10200675E81 /* NameDefiner.swift */; };
-		E23C8591244AEE3A009E4162 /* Naginata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8590244AEE3A009E4162 /* Naginata.swift */; };
-		E23C8593244AEEFE009E4162 /* Tanto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8592244AEEFE009E4162 /* Tanto.swift */; };
-		E23C8595244AEF69009E4162 /* Uchigatana.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8594244AEF69009E4162 /* Uchigatana.swift */; };
-		E23C8597244AEFA7009E4162 /* Wakizushi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8596244AEFA7009E4162 /* Wakizushi.swift */; };
-		E23C8599244AEFD8009E4162 /* Tachi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C8598244AEFD8009E4162 /* Tachi.swift */; };
-		E23C859B244AF049009E4162 /* Kunaï.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C859A244AF049009E4162 /* Kunaï.swift */; };
-		E23C859F244AF2A3009E4162 /* Asako.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C859E244AF2A3009E4162 /* Asako.swift */; };
-		E23C85A1244AF338009E4162 /* Eijiro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85A0244AF338009E4162 /* Eijiro.swift */; };
-		E23C85A3244AF37E009E4162 /* Hanabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85A2244AF37E009E4162 /* Hanabi.swift */; };
-		E23C85A5244AF3B9009E4162 /* Kabuto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85A4244AF3B9009E4162 /* Kabuto.swift */; };
-		E23C85A7244AF3F9009E4162 /* Namiko.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85A6244AF3F9009E4162 /* Namiko.swift */; };
-		E23C85A9244AF432009E4162 /* Shido.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85A8244AF432009E4162 /* Shido.swift */; };
+		E22F1A49246FF10200675E81 /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A48246FF10200675E81 /* InputManager.swift */; };
 		E23C85C8244B083E009E4162 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85C7244B083E009E4162 /* main.swift */; };
 		E25579D22445AFC4005E3D9A /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25579D12445AFC4005E3D9A /* GameManager.swift */; };
 		E25579D92445B48A005E3D9A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25579D82445B48A005E3D9A /* Player.swift */; };
@@ -45,19 +33,7 @@
 /* Begin PBXFileReference section */
 		E2293204245196DF004EE9CF /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		E22F1A46246FEC1A00675E81 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
-		E22F1A48246FF10200675E81 /* NameDefiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDefiner.swift; sourceTree = "<group>"; };
-		E23C8590244AEE3A009E4162 /* Naginata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Naginata.swift; sourceTree = "<group>"; };
-		E23C8592244AEEFE009E4162 /* Tanto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tanto.swift; sourceTree = "<group>"; };
-		E23C8594244AEF69009E4162 /* Uchigatana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uchigatana.swift; sourceTree = "<group>"; };
-		E23C8596244AEFA7009E4162 /* Wakizushi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wakizushi.swift; sourceTree = "<group>"; };
-		E23C8598244AEFD8009E4162 /* Tachi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tachi.swift; sourceTree = "<group>"; };
-		E23C859A244AF049009E4162 /* Kunaï.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kunaï.swift"; sourceTree = "<group>"; };
-		E23C859E244AF2A3009E4162 /* Asako.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asako.swift; sourceTree = "<group>"; };
-		E23C85A0244AF338009E4162 /* Eijiro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eijiro.swift; sourceTree = "<group>"; };
-		E23C85A2244AF37E009E4162 /* Hanabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hanabi.swift; sourceTree = "<group>"; };
-		E23C85A4244AF3B9009E4162 /* Kabuto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kabuto.swift; sourceTree = "<group>"; };
-		E23C85A6244AF3F9009E4162 /* Namiko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namiko.swift; sourceTree = "<group>"; };
-		E23C85A8244AF432009E4162 /* Shido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shido.swift; sourceTree = "<group>"; };
+		E22F1A48246FF10200675E81 /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 		E23C85C7244B083E009E4162 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E25579CE2445AFC4005E3D9A /* P3_01_XCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = P3_01_XCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25579D12445AFC4005E3D9A /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
@@ -82,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				E25579DC2445BB7D005E3D9A /* Weapon.swift */,
-				E23C85CA244B0A59009E4162 /* Subclasses */,
 			);
 			path = Weapon;
 			sourceTree = "<group>";
@@ -91,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				E25579DA2445BB4E005E3D9A /* Warrior.swift */,
-				E23C85C9244B0A49009E4162 /* Subclasses */,
 			);
 			path = Warrior;
 			sourceTree = "<group>";
@@ -102,32 +76,6 @@
 				E25579D82445B48A005E3D9A /* Player.swift */,
 			);
 			path = Player;
-			sourceTree = "<group>";
-		};
-		E23C85C9244B0A49009E4162 /* Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				E23C859E244AF2A3009E4162 /* Asako.swift */,
-				E23C85A0244AF338009E4162 /* Eijiro.swift */,
-				E23C85A2244AF37E009E4162 /* Hanabi.swift */,
-				E23C85A4244AF3B9009E4162 /* Kabuto.swift */,
-				E23C85A6244AF3F9009E4162 /* Namiko.swift */,
-				E23C85A8244AF432009E4162 /* Shido.swift */,
-			);
-			path = Subclasses;
-			sourceTree = "<group>";
-		};
-		E23C85CA244B0A59009E4162 /* Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				E23C8590244AEE3A009E4162 /* Naginata.swift */,
-				E23C8594244AEF69009E4162 /* Uchigatana.swift */,
-				E23C8596244AEFA7009E4162 /* Wakizushi.swift */,
-				E23C8598244AEFD8009E4162 /* Tachi.swift */,
-				E23C859A244AF049009E4162 /* Kunaï.swift */,
-				E23C8592244AEEFE009E4162 /* Tanto.swift */,
-			);
-			path = Subclasses;
 			sourceTree = "<group>";
 		};
 		E25579C52445AFC4005E3D9A = {
@@ -150,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				E23C85C7244B083E009E4162 /* main.swift */,
-				E22F1A48246FF10200675E81 /* NameDefiner.swift */,
+				E22F1A48246FF10200675E81 /* InputManager.swift */,
 				E25579D12445AFC4005E3D9A /* GameManager.swift */,
 				E2293204245196DF004EE9CF /* Family.swift */,
 				E23C85AE244AF625009E4162 /* Player */,
@@ -189,7 +137,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Fabrice Mourou";
 				TargetAttributes = {
 					E25579CD2445AFC4005E3D9A = {
@@ -220,27 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23C8595244AEF69009E4162 /* Uchigatana.swift in Sources */,
 				E25579DB2445BB4E005E3D9A /* Warrior.swift in Sources */,
 				E25579DD2445BB7D005E3D9A /* Weapon.swift in Sources */,
 				E25579D92445B48A005E3D9A /* Player.swift in Sources */,
-				E23C85A3244AF37E009E4162 /* Hanabi.swift in Sources */,
 				E25579D22445AFC4005E3D9A /* GameManager.swift in Sources */,
-				E23C85A7244AF3F9009E4162 /* Namiko.swift in Sources */,
-				E23C8591244AEE3A009E4162 /* Naginata.swift in Sources */,
 				E25579DF2445BBA9005E3D9A /* Chest.swift in Sources */,
-				E23C8599244AEFD8009E4162 /* Tachi.swift in Sources */,
-				E23C85A1244AF338009E4162 /* Eijiro.swift in Sources */,
-				E23C85A5244AF3B9009E4162 /* Kabuto.swift in Sources */,
-				E22F1A49246FF10200675E81 /* NameDefiner.swift in Sources */,
+				E22F1A49246FF10200675E81 /* InputManager.swift in Sources */,
 				E2293205245196DF004EE9CF /* Family.swift in Sources */,
 				E22F1A47246FEC1A00675E81 /* InputError.swift in Sources */,
-				E23C8593244AEEFE009E4162 /* Tanto.swift in Sources */,
-				E23C859F244AF2A3009E4162 /* Asako.swift in Sources */,
 				E23C85C8244B083E009E4162 /* main.swift in Sources */,
-				E23C85A9244AF432009E4162 /* Shido.swift in Sources */,
-				E23C859B244AF049009E4162 /* Kunaï.swift in Sources */,
-				E23C8597244AEFA7009E4162 /* Wakizushi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +299,7 @@
 		E25579D62445AFC4005E3D9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4GMB4889M;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -374,6 +311,7 @@
 		E25579D72445AFC4005E3D9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4GMB4889M;
 				ENABLE_HARDENED_RUNTIME = YES;

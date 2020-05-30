@@ -68,75 +68,82 @@ class Player {
         print(" 🎌 Enter your warrior's name \(id) 🎯")
         let warriorName = nameDefiner.startAskNameLoop(id: id, alreadyUsedNames: alreadyUsedWarriorNames)
         
-        let weapon = Naginata()
+        let weapon = Weapon(name: "Naginata", attackPoints: 20)
         let warrior = Warrior(name: warriorName , maxLifePoints: 100, weapon: weapon, baseAttackPoints: 10)
         
         warriors.append(warrior)
         
     }
     
-    func playTurn(opponentPlayer: Player, teammatePlayer: Player) {
+ 
+    
+    func playTurn(opponentPlayer: Player) {
         describeWarriors()
-        let selectedWarrior = selectWarrior(from: self)
         
-        //TODO: decide to attack  or heal
-        if let playerChoice = readLine() {
-            
-            if playerChoice == "1"{
-        opponentPlayer.describeWarriors()
-        let targetWarrior = selectWarrior(from: opponentPlayer)
-        selectedWarrior.attack(warrior: targetWarrior)
-                targetWarrior.describeHealthPoint(warrior: selectedWarrior)
-            }
-            else if playerChoice == "2"{
-        teammatePlayer.describeWarriors()
-        let targetTeammate = selectWarrior(from: teammatePlayer )
-        selectedWarrior.heal(warrior: targetTeammate)
-                targetTeammate.describeHealthPoint(warrior: selectedWarrior)
-            }
-            else {
-                
-            }
+        let actionMakerWarrior = selectWarrior(from: self)
+       
+
+        print("Make your choice !:")
+        print ("1: ⚔️ Attack ⚔️")
+        print ("2: 💊  Heal  💊")
         
+        let actionToPerform = nameDefiner.startAskActionToPeformLoop()
+        
+        switch actionToPerform {
+        case .attack: performAction(actionMakerWarrior: actionMakerWarrior, targetPlayer: opponentPlayer, action: .attack)
+        case .heal: performAction(actionMakerWarrior: actionMakerWarrior, targetPlayer: self, action: .heal)
         }
-        
-        
-        // if attackk => select second warrior from opoonentplayer
-        // if heal => select second warrior from self team
-        // performaction (heal or attack)
     }
     
+    private func performAction(actionMakerWarrior: Warrior, targetPlayer: Player, action: Warrior.Action) {
+        targetPlayer.describeWarriors()
+        let targetWarrior = selectWarrior(from: targetPlayer)
+        
+        switch action {
+        case .attack: actionMakerWarrior.attack(warrior: targetWarrior)
+        case .heal:  actionMakerWarrior.heal(warrior: targetWarrior)
+        }
+        
+        targetWarrior.describeHealthPoint(warrior: actionMakerWarrior)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     func describeWarriors() {
-        for warrior in warriors {
+        for (index, warrior) in warriors.enumerated() {
+            print(index + 1, terminator: " ")
             warrior.describe()
-            
         }
     }
     
     func selectWarrior(from player: Player) -> Warrior {
+        print()
+        print("🌿 Please select warrior 1->3 ⚔️ ლ(•́•́ლ):")
         
         
-        //TODO: Get user choice from readline
-        let playerChoice = Int(readLine()!)!
+        let selectedWarrior = nameDefiner.startWarriorSelectionLoop(warriors: player.warriors)
         
-        let selectedWarrior = player.warriors[playerChoice]
-        
-        print("You have selected \(selectedWarrior.name) 🌿")
-        print ("1: ⚔️ Choose Attack ⚔️")
-        print ("2: 💊 Choose Heal 💊")
+        print("🌿 You have selected \(selectedWarrior.name) ⚔️ ᕦ(ò_óˇ)ᕤ")
+        print()
         
         
         return selectedWarrior
     }
-    func removeWarrior (){
-            
     
-               }
-   
+    func removeWarrior (){
+        
+        
+    }
+    
     // MARK: - Private
     
     // MARK: Properties - Private
-    private let nameDefiner = NameDefiner()
+    private let nameDefiner = InputManager()
     
     
     // MARK: Methods - Private
