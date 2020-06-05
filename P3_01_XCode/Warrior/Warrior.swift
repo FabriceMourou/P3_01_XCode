@@ -6,11 +6,9 @@
 //  Copyright © 2020 Fabrice Mourou. All rights reserved.
 //
 
+
+
 class Warrior {
-    
-    enum Action: CaseIterable {
-        case attack, heal
-    }
     
     // MARK: - Internal
     
@@ -27,9 +25,15 @@ class Warrior {
     
     var isAlive: Bool { currentLifePoints > 0 }
     
+    
+    
     // MARK: Methods - Internal
     
-    /// Function used
+    enum Action: CaseIterable {
+        case attack, heal
+    }
+    
+    
     func attack(warrior: Warrior) {
         print()
         print(" 🎌 \(name) attack ⚔️ \(warrior.name) with \(weapon.name) 🗡")
@@ -40,9 +44,8 @@ class Warrior {
         print()
         print("🎌 \(name) heals 🌡 \(warrior.name)")
         warrior.takeHeal(amount: attackPoints)
-        
     }
-    /// Function used to reduce hp according to damage amount
+    
     func takeDamage(amount: Int) {
         currentLifePoints -= amount
     }
@@ -56,15 +59,30 @@ class Warrior {
         
     }
     
+    func handleChestDiscovery() {
+        let randomNumber = Int.random(in: 1...2)
+        let isChestFound = randomNumber == 1
+        
+        if isChestFound {
+            print("\(name) found a chest")
+            print("Current 🗡 weapon has \(weapon.attackPoints) attack bonus")
+            guard let newWeapon = Weapon.weaponList.randomElement() else { return }
+            weapon = newWeapon
+            print(" ★★ New weapon ⚔️ has \(weapon.attackPoints) attack bonus ★★")
+            print()
+            
+        }
+    }
+    
     func describeHealthPoint(warrior: Warrior) {
         
-        guard isAlive == true else{
+        guard isAlive else {
             print()
             print("☠️ \(name) is dead ☠️ !")
             print("🚫 You can no longer fight with \(name) 🚫")
             print()
             
-         
+            
             return
         }
         print("🩸\(name) has now \(currentLifePoints) HP 🩸 ")
@@ -80,7 +98,7 @@ class Warrior {
     // MARK: Properties - Private
     
     var name = ""
-    private var currentLifePoints: Int {
+    var currentLifePoints: Int {
         didSet {
             if !isAlive {
                 currentLifePoints = 0
@@ -100,10 +118,6 @@ class Warrior {
     }
     
     private var isOverHealed: Bool { currentLifePoints > maxLifePoints }
-    
-    // MARK: Methods - Private
-    
-    
     
     
     

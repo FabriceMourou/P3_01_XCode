@@ -7,9 +7,16 @@
 //
 
 class Chest {
-    var weaponBonus: Int
+    
     
     init(weaponBonus: Int) {
         self.weaponBonus = weaponBonus
     }
+    
+    
+    // MARK: - Internal
+    
+    // MARK: Properties - Internal
+    
+    var weaponBonus: Int
 }

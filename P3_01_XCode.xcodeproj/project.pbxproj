@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E2293205245196DF004EE9CF /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2293204245196DF004EE9CF /* Family.swift */; };
 		E22F1A47246FEC1A00675E81 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A46246FEC1A00675E81 /* InputError.swift */; };
 		E22F1A49246FF10200675E81 /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F1A48246FF10200675E81 /* InputManager.swift */; };
 		E23C85C8244B083E009E4162 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C85C7244B083E009E4162 /* main.swift */; };
@@ -31,7 +30,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E2293204245196DF004EE9CF /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		E22F1A46246FEC1A00675E81 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
 		E22F1A48246FF10200675E81 /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 		E23C85C7244B083E009E4162 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				E23C85C7244B083E009E4162 /* main.swift */,
 				E22F1A48246FF10200675E81 /* InputManager.swift */,
 				E25579D12445AFC4005E3D9A /* GameManager.swift */,
-				E2293204245196DF004EE9CF /* Family.swift */,
 				E23C85AE244AF625009E4162 /* Player */,
 				E23C859D244AF263009E4162 /* Warrior */,
 				E23C859C244AF077009E4162 /* Weapon */,
@@ -174,7 +171,6 @@
 				E25579D22445AFC4005E3D9A /* GameManager.swift in Sources */,
 				E25579DF2445BBA9005E3D9A /* Chest.swift in Sources */,
 				E22F1A49246FF10200675E81 /* InputManager.swift in Sources */,
-				E2293205245196DF004EE9CF /* Family.swift in Sources */,
 				E22F1A47246FEC1A00675E81 /* InputError.swift in Sources */,
 				E23C85C8244B083E009E4162 /* main.swift in Sources */,
 			);

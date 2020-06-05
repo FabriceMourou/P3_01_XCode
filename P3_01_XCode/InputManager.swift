@@ -8,7 +8,18 @@
 
 import Foundation
 
+
+
+
+
 class InputManager {
+    
+    
+    // MARK: - Internal
+    
+    // MARK: Methods - Internal
+    
+    
     
     func startWarriorSelectionLoop(warriors: [Warrior]) -> Warrior {
         var warrior: Warrior?
@@ -54,6 +65,14 @@ class InputManager {
         
         return name!
     }
+    
+    
+    
+    // MARK: - Private
+    
+    
+    
+    // MARK: Methods - Private
     
     private func askToDefineName(allNames: [String]) throws -> String {
         
@@ -101,14 +120,19 @@ class InputManager {
             throw InputError.cannotConvertToInteger
         }
         
-        //indexChoice > 0 || indexChoice < Warrior.Action.allCases.count
         
         guard 1...warriors.count ~= indexChoice else {
             throw InputError.indexOutOfBounds
             
         }
         
-        return warriors[indexChoice - 1]
+        let selectedWarrior = warriors[indexChoice - 1]
+        
+        guard selectedWarrior.isAlive else {
+            throw InputError.cannotSelectDeadWarrior
+        }
+        
+        return selectedWarrior
     }
     
     

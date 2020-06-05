@@ -16,7 +16,11 @@ enum InputError: Error {
     case askNameErrorNameAlreadyUsed
     case indexOutOfBounds
     case cannotConvertToInteger
+    case cannotSelectDeadWarrior
     
+    // MARK: - Internal
+    
+    // MARK: Properties - Internal
     
     var errorMessage: String {
         switch self {
@@ -26,6 +30,7 @@ enum InputError: Error {
         case .terminalError: return "Terminal error"
         case .cannotConvertToInteger: return "Cannot convert to integer"
         case .indexOutOfBounds: return "Index out of bounds"
+        case .cannotSelectDeadWarrior: return "Cannot select dead warrior"
         }
     }
     

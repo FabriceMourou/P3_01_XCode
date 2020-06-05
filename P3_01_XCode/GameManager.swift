@@ -34,7 +34,7 @@ class GameManager {
     // MARK: Properties - Private
     
     private let nameDefiner = InputManager()
-    
+    private var numberOfTurns = 0
     private var players: [Player]
     private var turnNumbers: Int
     private let numberOfPlayer: Int
@@ -59,11 +59,6 @@ class GameManager {
     
     
     
-    
-    
- 
-    
-    
     private func createPlayers() {
         for playerId in 1...numberOfPlayer {
             print(" 🔆 player \(playerId) please input your name: 🔆")
@@ -73,8 +68,6 @@ class GameManager {
             players.append(player)
         }
     }
-    
-    
     
     
     private func startTeamCreationPhase() {
@@ -99,12 +92,12 @@ class GameManager {
     
     private var isGameOver: Bool {
         for player in players {
-            if player.isInGame {
-                return false
+            if !player.isInGame {
+                return true
             }
         }
         
-        return true
+        return false
     }
     
     private func startFightPhase() {
@@ -112,21 +105,38 @@ class GameManager {
         printStartFightPhaseBeginInstructions()
         
         while !isGameOver {
+            
             for player in players {
-                // opponent should be handled differently if there multiple player (more than 2)
-                // Test
+               numberOfTurns += 1
                 let opponent = getOpponentFrom(player: player)
-                //                player.playTurn(opponentPlayer: opponent)
+               
                 player.playTurn(opponentPlayer: opponent)
                 if isGameOver {
                     break
+                   
                 }
+                
             }
         }
     }
     
     private func handleEndGame(){
+        print("🏁❌ End Of Game ❌🏁")
         describeAllPlayerWarriors()
+        print("Number of turns: \(numberOfTurns)")
+        
+        if let winner = getWinnerFrom(players: players) {
+            print("The winner is \(winner.name)")
+        }
+        
+    }
+    
+    private func getWinnerFrom(players: [Player]) -> Player? {
+        for player in players where player.isInGame {
+            return player
+        }
+        
+        return nil
     }
     
     private func getOpponentFrom(player: Player) -> Player {
@@ -142,7 +152,9 @@ class GameManager {
     
     private func describeAllPlayerWarriors() {
         for player in players {
+            print("\(player.name)'s Team")
             player.describeWarriors()
+            print()
         }
     }
     

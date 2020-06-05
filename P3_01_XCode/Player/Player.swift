@@ -24,9 +24,7 @@ class Player {
     
     // MARK: Properties - Internal
     
-    var isInGame: Bool { id > 0 }
-    
-    var isStillInGame: Bool {
+    var isInGame: Bool {
         for warrior in warriors {
             if warrior.isAlive {
                 return true
@@ -35,7 +33,6 @@ class Player {
         }
         
         return false
-        
     }
     
     
@@ -51,6 +48,58 @@ class Player {
     }
     
     
+    func playTurn(opponentPlayer: Player) {
+        describeWarriors()
+        
+        let actionMakerWarrior = selectWarrior(from: self)
+        actionMakerWarrior.handleChestDiscovery()
+        
+        
+        print("Make your choice !:")
+        print ("1: ⚔️ Attack ⚔️")
+        print ("2: 💊  Heal  💊")
+        
+        let actionToPerform = inputManager.startAskActionToPeformLoop()
+        
+        switch actionToPerform {
+        case .attack: performAction(actionMakerWarrior: actionMakerWarrior, targetPlayer: opponentPlayer, action: .attack)
+        case .heal: performAction(actionMakerWarrior: actionMakerWarrior, targetPlayer: self, action: .heal)
+        }
+    }
+    
+    
+    func describeWarriors() {
+        for (index, warrior) in warriors.enumerated() {
+            print(index + 1, terminator: " ")
+            warrior.describe()
+        }
+    }
+    
+    func selectWarrior(from player: Player) -> Warrior {
+        print()
+        print("🌿 Please select warrior 1->3 ⚔️ ლ(•́•́ლ):")
+        
+        
+        let selectedWarrior = inputManager.startWarriorSelectionLoop(warriors: player.warriors)
+        
+        print("🌿 You have selected \(selectedWarrior.name) ⚔️ ᕦ(ò_óˇ)ᕤ")
+        print()
+        
+        
+        return selectedWarrior
+    }
+    
+    
+    
+    // MARK: - Private
+    
+    // MARK: Properties - Private
+    private let inputManager = InputManager()
+    
+    
+    
+    
+    // MARK: Methods - Private
     
     private func getAllWarriorNamesFrom(players: [Player]) -> [String] {
         var allNames: [String] = []
@@ -66,33 +115,14 @@ class Player {
     private func createWarrior(id: Int, alreadyUsedWarriorNames: [String]) {
         
         print(" 🎌 Enter your warrior's name \(id) 🎯")
-        let warriorName = nameDefiner.startAskNameLoop(id: id, alreadyUsedNames: alreadyUsedWarriorNames)
+        let warriorName = inputManager.startAskNameLoop(id: id, alreadyUsedNames: alreadyUsedWarriorNames)
         
-        let weapon = Weapon(name: "Naginata", attackPoints: 20)
-        let warrior = Warrior(name: warriorName , maxLifePoints: 100, weapon: weapon, baseAttackPoints: 10)
+        
+        let weapon = Weapon(name: "Tanto", attackPoints: 50)
+        let warrior = Warrior(name: warriorName , maxLifePoints: 1, weapon: weapon, baseAttackPoints: 0)
         
         warriors.append(warrior)
         
-    }
-    
- 
-    
-    func playTurn(opponentPlayer: Player) {
-        describeWarriors()
-        
-        let actionMakerWarrior = selectWarrior(from: self)
-       
-
-        print("Make your choice !:")
-        print ("1: ⚔️ Attack ⚔️")
-        print ("2: 💊  Heal  💊")
-        
-        let actionToPerform = nameDefiner.startAskActionToPeformLoop()
-        
-        switch actionToPerform {
-        case .attack: performAction(actionMakerWarrior: actionMakerWarrior, targetPlayer: opponentPlayer, action: .attack)
-        case .heal: performAction(actionMakerWarrior: actionMakerWarrior, targetPlayer: self, action: .heal)
-        }
     }
     
     private func performAction(actionMakerWarrior: Warrior, targetPlayer: Player, action: Warrior.Action) {
@@ -110,41 +140,4 @@ class Player {
     
     
     
-    
-    
-    
-    
-    func describeWarriors() {
-        for (index, warrior) in warriors.enumerated() {
-            print(index + 1, terminator: " ")
-            warrior.describe()
-        }
-    }
-    
-    func selectWarrior(from player: Player) -> Warrior {
-        print()
-        print("🌿 Please select warrior 1->3 ⚔️ ლ(•́•́ლ):")
-        
-        
-        let selectedWarrior = nameDefiner.startWarriorSelectionLoop(warriors: player.warriors)
-        
-        print("🌿 You have selected \(selectedWarrior.name) ⚔️ ᕦ(ò_óˇ)ᕤ")
-        print()
-        
-        
-        return selectedWarrior
-    }
-    
-    func removeWarrior (){
-        
-        
-    }
-    
-    // MARK: - Private
-    
-    // MARK: Properties - Private
-    private let nameDefiner = InputManager()
-    
-    
-    // MARK: Methods - Private
 }
