@@ -12,11 +12,12 @@ class Warrior {
     
     // MARK: - Internal
     
-    init(name: String, maxLifePoints: Int, weapon: Weapon, baseAttackPoints: Int) {
+    init(name: String, maxLifePoints: Int, weapon: Weapon, baseAttackPoints: Int, baseMagicPoints: Int) {
         self.name = name
         self.maxLifePoints = maxLifePoints
         self.weapon = weapon
         self.baseAttackPoints = baseAttackPoints
+        self.baseMagicPoints = baseMagicPoints
         
         currentLifePoints = maxLifePoints
     }
@@ -43,7 +44,7 @@ class Warrior {
     func heal(warrior: Warrior) {
         print()
         print("🎌 \(name) heals 🌡 \(warrior.name)")
-        warrior.takeHeal(amount: attackPoints)
+        warrior.takeHeal(amount: magicPoints)
     }
     
     func takeDamage(amount: Int) {
@@ -55,7 +56,7 @@ class Warrior {
     }
     
     func describe() {
-        print(" 🌿  ٩(๏_๏)۶ warrior \(name) -> \(currentLifePoints)/\(maxLifePoints) ٩(๏_๏)۶")
+        print(" 🌿  ٩(๏_๏)۶ \(name) -> \(currentLifePoints)/\(maxLifePoints) Life Points // 🥊 AP: \(attackPoints) 🥊 // ⚔️ Weapon Name: \(weapon.name) ⚔️ // MP: \(magicPoints) ٩(๏_๏)۶ 🌿")
         
     }
     
@@ -64,11 +65,11 @@ class Warrior {
         let isChestFound = randomNumber == 1
         
         if isChestFound {
-            print("\(name) found a chest")
-            print("Current 🗡 weapon has \(weapon.attackPoints) attack bonus")
+            print("⚡︎⚡︎ \(name) found a chest 🎁 ⚡︎⚡︎")
+            print("Current 🗡 weapon has \(weapon.attackPoints) attack point")
             guard let newWeapon = Weapon.weaponList.randomElement() else { return }
             weapon = newWeapon
-            print(" ★★ New weapon ⚔️ has \(weapon.attackPoints) attack bonus ★★")
+            print(" ★★ New weapon ⚔️ has \(weapon.attackPoints) attack point ★★")
             print()
             
         }
@@ -113,9 +114,14 @@ class Warrior {
     private let maxLifePoints: Int
     private var weapon: Weapon
     private var baseAttackPoints: Int
+    private var baseMagicPoints: Int
+    
     private var attackPoints: Int {
         return baseAttackPoints + weapon.attackPoints
     }
+    private var magicPoints: Int {
+          return baseMagicPoints + weapon.attackPoints
+      }
     
     private var isOverHealed: Bool { currentLifePoints > maxLifePoints }
     

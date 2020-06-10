@@ -55,7 +55,7 @@ class Player {
         actionMakerWarrior.handleChestDiscovery()
         
         
-        print("Make your choice !:")
+        print("Do you want to attack or heal? ⏳")
         print ("1: ⚔️ Attack ⚔️")
         print ("2: 💊  Heal  💊")
         
@@ -67,7 +67,7 @@ class Player {
         }
     }
     
-    
+   
     func describeWarriors() {
         for (index, warrior) in warriors.enumerated() {
             print(index + 1, terminator: " ")
@@ -77,7 +77,7 @@ class Player {
     
     func selectWarrior(from player: Player) -> Warrior {
         print()
-        print("🌿 Please select warrior 1->3 ⚔️ ლ(•́•́ლ):")
+        print("🌿 \(name) Please select warrior 1->3 ⚔️ ლ(•́•́ლ) 🌿 :")
         
         
         let selectedWarrior = inputManager.startWarriorSelectionLoop(warriors: player.warriors)
@@ -118,8 +118,8 @@ class Player {
         let warriorName = inputManager.startAskNameLoop(id: id, alreadyUsedNames: alreadyUsedWarriorNames)
         
         
-        let weapon = Weapon(name: "Tanto", attackPoints: 50)
-        let warrior = Warrior(name: warriorName , maxLifePoints: 1, weapon: weapon, baseAttackPoints: 0)
+        let weapon = Weapon(name: "Tanto", attackPoints: 15, magicPoints: 10)
+        let warrior = Warrior(name: warriorName , maxLifePoints: 50, weapon: weapon, baseAttackPoints: 5, baseMagicPoints: 5)
         
         warriors.append(warrior)
         

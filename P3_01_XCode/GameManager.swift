@@ -53,15 +53,17 @@ class GameManager {
     
     
     private func printWelcomeInstructions() {
-        print("🟠       Welcome in this wonderful game         🟠")
-        print("🟠   (ง’̀-‘́)ง 🔴-🔶-🔴-🔶-🔴-🔶-🔴-🔶 (ง’̀-‘́)ง   🟠")
+        print("🌟       🐲 Welcome in this wonderful game 🐲         🌟")
+        print("🔆     (ง’̀-‘́)ง 🍀-🔶-🍀-🔶-🍀-🔶-🍀-🔶 (ง’̀-‘́)ง       🔆")
+        print()
+        
     }
     
     
     
     private func createPlayers() {
         for playerId in 1...numberOfPlayer {
-            print(" 🔆 player \(playerId) please input your name: 🔆")
+            print(" 🐉🔆 player \(playerId) please input your name: 🔆🐉")
             let playerName = nameDefiner.startAskNameLoop(id: playerId, alreadyUsedNames: playerNames)
             let player = Player(id: playerId, name: playerName)
             
@@ -79,13 +81,13 @@ class GameManager {
     
     private func printStartFightPhaseBeginInstructions() {
         print()
-        print("⚔️ ლ(•́•́ლ) ", separator: "", terminator: "")
+        print("⚔️🧿 ლ(•́•́ლ) ", separator: "", terminator: "")
         for name in playerNames {
             print(name, separator: "", terminator: " ! ")
         }
-        print("Choose your warriors !! ლ(•́•́ლ) ⚔️")
-       
-        print("⚔️ ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ ⚔️")
+        print("Choose your warriors !! ლ(•́•́ლ) 🧿⚔️")
+        
+        print("    ⚔️🧨 ᕦ(ò_óˇ)ᕤ the battle will begin ᕦ(ò_óˇ)ᕤ 🧨⚔️")
         print()
         
     }
@@ -107,13 +109,13 @@ class GameManager {
         while !isGameOver {
             
             for player in players {
-               numberOfTurns += 1
+                numberOfTurns += 1
                 let opponent = getOpponentFrom(player: player)
-               
+                
                 player.playTurn(opponentPlayer: opponent)
                 if isGameOver {
                     break
-                   
+                    
                 }
                 
             }
@@ -122,12 +124,21 @@ class GameManager {
     
     private func handleEndGame(){
         print("🏁❌ End Of Game ❌🏁")
-        describeAllPlayerWarriors()
-        print("Number of turns: \(numberOfTurns)")
-        
+        print()
         if let winner = getWinnerFrom(players: players) {
-            print("The winner is \(winner.name)")
+            print("💥🌟🐲🍀        ᕦ(ò_óˇ)ᕤ         🍀🐲🌟💥")
+            print("     ⭐️⭐️⭐️ THE WINNER IS \(winner.name) ⭐️⭐️⭐️")
+            print("💥🌟🐲🍀        ᕦ(ò_óˇ)ᕤ         🍀🐲🌟💥")
+            print()
         }
+        
+        print("🐉 Number of turns: \(numberOfTurns) 🐉")
+        print()
+        
+        describeAllPlayerWarriors()
+        
+        
+        
         
     }
     

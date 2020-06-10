@@ -11,9 +11,8 @@ import Foundation
 
 enum InputError: Error {
     case terminalError
-    case inputIsTooShort
-    case inputIsTooLong
     case askNameErrorNameAlreadyUsed
+    case askNameErrorNameIsEmptyOrWhiteSpaces
     case indexOutOfBounds
     case cannotConvertToInteger
     case cannotSelectDeadWarrior
@@ -24,13 +23,12 @@ enum InputError: Error {
     
     var errorMessage: String {
         switch self {
-        case .askNameErrorNameAlreadyUsed: return "Name Already Used"
-        case .inputIsTooLong: return "Name is too long"
-        case .inputIsTooShort: return "Name is too short"
-        case .terminalError: return "Terminal error"
-        case .cannotConvertToInteger: return "Cannot convert to integer"
-        case .indexOutOfBounds: return "Index out of bounds"
-        case .cannotSelectDeadWarrior: return "Cannot select dead warrior"
+        case .askNameErrorNameIsEmptyOrWhiteSpaces: return "🔎 Name is invalid "
+        case .askNameErrorNameAlreadyUsed: return "Name Already Used 🗄"
+        case .terminalError: return "Terminal error 💻"
+        case .cannotConvertToInteger: return "Cannot convert to integer 🔢"
+        case .indexOutOfBounds: return "Index out of bounds 🛠"
+        case .cannotSelectDeadWarrior: return "⛔️ Cannot select dead warrior 💀"
         }
     }
     

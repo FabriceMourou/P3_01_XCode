@@ -80,6 +80,10 @@ class InputManager {
         guard let name = readLine() else {
             throw InputError.terminalError
         }
+    
+        guard !name.trimmingCharacters(in: .whitespaces).isEmpty else {
+            throw InputError.askNameErrorNameIsEmptyOrWhiteSpaces
+        }
         
         for nameInUse in allNames {
             if name.lowercased() == nameInUse.lowercased() {
